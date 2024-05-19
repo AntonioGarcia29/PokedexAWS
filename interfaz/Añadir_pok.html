@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Pokémon</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Agregar Pokémon</h1>
+        <form id="pokemonForm" class="mt-4">
+            <div class="form-group">
+                <label for="pok_id">ID Pokémon:</label>
+                <input type="text" class="form-control" id="pok_id" name="pok_id" required>
+            </div>
+            <div class="form-group">
+                <label for="pok_name">Nombre:</label>
+                <input type="text" class="form-control" id="pok_name" name="pok_name" required>
+            </div>
+            <div class="form-group">
+                <label for="pok_height">Altura:</label>
+                <input type="text" class="form-control" id="pok_height" name="pok_height" required>
+            </div>
+            <div class="form-group">
+                <label for="pok_weight">Peso:</label>
+                <input type="text" class="form-control" id="pok_weight" name="pok_weight" required>
+            </div>
+            <div class="form-group">
+                <label for="pok_base_experience">Experiencia Base:</label>
+                <input type="text" class="form-control" id="pok_base_experience" name="pok_base_experience" required>
+            </div>
+            <div class="form-group">
+                <label for="b_hp">HP:</label>
+                <input type="text" class="form-control" id="b_hp" name="b_hp" required>
+            </div>
+            <div class="form-group">
+                <label for="b_atk">Ataque:</label>
+                <input type="text" class="form-control" id="b_atk" name="b_atk" required>
+            </div>
+            <div class="form-group">
+                <label for="b_def">Defensa:</label>
+                <input type="text" class="form-control" id="b_def" name="b_def" required>
+            </div>
+            <div class="form-group">
+                <label for="b_sp_atk">Ataque Especial:</label>
+                <input type="text" class="form-control" id="b_sp_atk" name="b_sp_atk" required>
+            </div>
+            <div class="form-group">
+                <label for="b_sp_def">Defensa Especial:</label>
+                <input type="text" class="form-control" id="b_sp_def" name="b_sp_def" required>
+            </div>
+            <div class="form-group">
+                <label for="b_speed">Velocidad:</label>
+                <input type="text" class="form-control" id="b_speed" name="b_speed" required>
+            </div>
+            <div class="form-group">
+                <label for="pok_types">Tipos (separados por comas):</label>
+                <input type="text" class="form-control" id="pok_types" name="pok_types" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" onclick="redirectToPokedex()">Agregar Pokémon</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/AñadirPok.js"></script>
+</body>
+</html>
