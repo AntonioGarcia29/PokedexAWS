@@ -180,7 +180,7 @@ function searchPoke() {
 function updatePoke(pok_id) {
     // Redirige a la página de edición con el ID del Pokémon en la URL
     console.log(pok_id);
-    window.location.href = `editar.html?pok_id=${pok_id}`;
+    window.location.href = `Editar.html?pok_id=${pok_id}`;
 }
 
 
