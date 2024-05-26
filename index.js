@@ -1,5 +1,6 @@
 const morgan = require('morgan');
 const express = require('express');
+const path = require('path');
 const app = express();
 require('dotenv').config(); 
 
@@ -16,12 +17,20 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", index); 
+// Servir archivos estáticos desde el directorio 'interfaz'
+app.use(express.static(path.join(__dirname, 'interfaz')));
 
+// Ruta para la página de inicio
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'interfaz', 'index.html'));
+});
+
+// Rutas API
 app.use('/pokedex', pokedex); 
 
 app.use(notFound)
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log('Server is running...');
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}...`);
 });
