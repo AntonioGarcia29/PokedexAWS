@@ -31,18 +31,18 @@ pokedex.get("/", async (req, res, next) => {
 
     // Organiza la respuesta para evitar referencias circulares
     const formattedPokeList = Poke_list.map(pokemon => ({
-        pok_id: pokemon.pok_id,
-        pok_name: pokemon.pok_name,
-        pok_height: pokemon.pok_height,
-        pok_weight: pokemon.pok_weight,
-        pok_base_experience: pokemon.pok_base_experience,
-        b_hp: pokemon.b_hp,
-        b_atk: pokemon.b_atk,
-        b_def: pokemon.b_def,
-        b_sp_atk: pokemon.b_sp_atk,
-        b_sp_def: pokemon.b_sp_def,
-        b_speed: pokemon.b_speed,
-        pok_types: pokemon.pok_types.split(',') // Convertir el string de tipos en un array
+        pok_id: pokemon[0].pok_id,
+        pok_name: pokemon[0].pok_name,
+        pok_height: pokemon[0].pok_height,
+        pok_weight: pokemon[0].pok_weight,
+        pok_base_experience: pokemon[0].pok_base_experience,
+        b_hp: pokemon[0].b_hp,
+        b_atk: pokemon[0].b_atk,
+        b_def: pokemon[0].b_def,
+        b_sp_atk: pokemon[0].b_sp_atk,
+        b_sp_def: pokemon[0].b_sp_def,
+        b_speed: pokemon[0].b_speed,
+        pok_types: pokemon[0].pok_types.split(',') // Convertir el string de tipos en un array
     }));
 
     console.log(formattedPokeList);
