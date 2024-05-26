@@ -1,4 +1,4 @@
-const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['http://localhost:3000'];
+const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['http://3.94.102.239:3000'];
 
 module.exports = (req, res, next) => {
     const origin = req.headers.origin;
