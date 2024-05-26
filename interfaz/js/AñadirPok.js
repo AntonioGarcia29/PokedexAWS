@@ -3,7 +3,7 @@ window.onload = init;
 var headers = {
     'Content-Type': 'application/json'
 };
-var url = 'http://54.145.54.134'
+var url = 'http://54.145.54.134:3000'
 function init() {
     const form = document.getElementById('pokemonForm');
 
@@ -50,5 +50,5 @@ function init() {
 }
 
 function redirectToPokedex() {
-    window.location.href = "pokedex.html";
+    window.location.href = "Pokedex.html";
 }

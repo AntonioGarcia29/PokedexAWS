@@ -1,6 +1,6 @@
 window.onload = init;
 var headers = {};
-var url = 'http://54.145.54.134';
+var url = 'http://54.145.54.134:3000';
 var PokeData = 0;
 var pokemonesFiltrados = [];
 var currentPage = 1;
