@@ -3,7 +3,7 @@ window.onload = init;
 var headers = {
     'Content-Type': 'application/json'
 };
-var url = 'http://54.145.54.134:3000'
+var url = 'http://3.94.102.239:3000'
 function init() {
     const form = document.getElementById('pokemonForm');
 

@@ -1,24 +1,14 @@
-const mysql = require('mysql');
-require('dotenv').config(); // Carga el archivo .env
+const mysql = require('mysql2');
+const util = require('util');
 
-console.log('DB_HOST:', process.env.DB_HOST);
-console.log('DB_USER:', process.env.DB_USER);
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
-console.log('DB_NAME:', process.env.DB_NAME);
-
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+const pool = mysql.createPool({
+    connectionLimit: 10,
+    host: 'pokemon.cr2uu2euqlbf.us-east-1.rds.amazonaws.com',
+    user: 'anto',
+    password: 'palahumo',
+    database: 'pokemon'
 });
 
-connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-    process.exit(1); // Salir del proceso si no se puede conectar a la base de datos
-  }
-  console.log('Connected to the database.');
-});
+pool.query = util.promisify(pool.query);
 
-module.exports = connection;
+module.exports = pool;
