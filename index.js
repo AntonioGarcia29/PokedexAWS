@@ -1,6 +1,7 @@
 const morgan = require('morgan');
 const express = require('express');
 const app = express();
+require('dotenv').config(); 
 
 // routers
 const pokedex = require('./routes/pokedex');

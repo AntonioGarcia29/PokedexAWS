@@ -1,6 +1,6 @@
 window.onload = init;
 var headers = {};
-var url = 'http://localhost:3000';
+var url = 'http://your-ec2-public-dns:3000';
 var PokeData = 0;
 var pokemonesFiltrados = [];
 var currentPage = 1;
