@@ -28,9 +28,27 @@ pokedex.get("/", async (req, res, next) => {
         GROUP BY 
             p.pok_id, p.pok_name, p.pok_height, p.pok_weight, p.pok_base_experience, bs.b_hp, bs.b_atk, bs.b_def, bs.b_sp_atk, bs.b_sp_def, bs.b_speed;
     `);
-    console.log(Poke_list);
-    return res.status(200).json({ code: 1, message: Poke_list });
+
+    // Organiza la respuesta para evitar referencias circulares
+    const formattedPokeList = Poke_list.map(pokemon => ({
+        pok_id: pokemon.pok_id,
+        pok_name: pokemon.pok_name,
+        pok_height: pokemon.pok_height,
+        pok_weight: pokemon.pok_weight,
+        pok_base_experience: pokemon.pok_base_experience,
+        b_hp: pokemon.b_hp,
+        b_atk: pokemon.b_atk,
+        b_def: pokemon.b_def,
+        b_sp_atk: pokemon.b_sp_atk,
+        b_sp_def: pokemon.b_sp_def,
+        b_speed: pokemon.b_speed,
+        pok_types: pokemon.pok_types.split(',') // Convertir el string de tipos en un array
+    }));
+
+    console.log(formattedPokeList);
+    return res.status(200).json({ code: 1, message: formattedPokeList });
 });
+
 
 pokedex.get('/:id([0-9]{1,3})', async (req, res, next) => {
     const id = req.params.id;
