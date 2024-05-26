@@ -5,17 +5,7 @@ const db = require('../config/database');
 pokedex.get("/", async (req, res, next) => {
     const Poke_list = await db.query(`
         SELECT 
-            p.pok_id, 
-            p.pok_name, 
-            p.pok_height, 
-            p.pok_weight, 
-            p.pok_base_experience,
-            bs.b_hp,
-            bs.b_atk,
-            bs.b_def,
-            bs.b_sp_atk,
-            bs.b_sp_def,
-            bs.b_speed,
+            p.pok_id, p.pok_name, p.pok_height, p.pok_weight, p.pok_base_experience, bs.b_hp,bs.b_atk,bs.b_def,bs.b_sp_atk,bs.b_sp_def,bs.b_speed,
             GROUP_CONCAT(t.type_name) AS pok_types 
         FROM 
             pokemon p 
